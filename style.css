@@ -1,0 +1,208 @@
+:root {
+  --bg: #FBFAF7;
+  --ink: #1F242B;
+  --ink-soft: #545B66;
+  --accent: #3D5A80;
+  --accent-soft: #E8EDF2;
+  --line: #E1DED5;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 2rem 1.5rem 5rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4.5rem;
+}
+
+.nav-mark {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin-bottom: 2.25rem;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #33506f; }
+
+.btn-ghost { border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+
+.section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-note {
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+}
+
+/* About */
+
+.about-grid {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 62ch;
+}
+
+.about-text { color: var(--ink-soft); }
+
+/* Skills */
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skills-list li {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
+}
+
+/* Projects */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.project-card--empty { border-style: dashed; }
+
+.project-status {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.project-card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Contact */
+
+.contact-links {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+}
+
+.contact-links a { color: var(--accent); border-bottom: 1px solid transparent; }
+.contact-links a:hover { border-bottom-color: var(--accent); }
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .nav-links { gap: 1.1rem; font-size: 0.85rem; }
+  .hero { padding: 1.5rem 1.25rem 3.5rem; }
+  .section { padding: 3rem 1.25rem; }
+}
+
+/* Accessibility */
+
+a:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
